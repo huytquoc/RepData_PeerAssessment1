@@ -34,7 +34,7 @@ dataset.
 *Show any code that is needed to*
 
 1. Load the data (i.e. `read.csv()`)
-```{r, echo=FALSE}
+```{r, echo=TRUE}
 # Set working directory and download data file 
 mainDir <- getwd()
 subDir <- "RRPA1_Data"

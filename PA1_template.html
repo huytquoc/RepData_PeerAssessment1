@@ -78,6 +78,21 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <ol style="list-style-type: decimal">
 <li>Load the data (i.e. <code>read.csv()</code>)</li>
 </ol>
+<pre class="r"><code># Set working directory and download data file 
+mainDir &lt;- getwd()
+subDir &lt;- &quot;RRPA1_Data&quot;
+
+if (file.exists(subDir)){
+    setwd(file.path(mainDir, subDir))
+} else {
+    dir.create(file.path(mainDir, subDir))
+    setwd(file.path(mainDir, subDir))
+}
+
+# Download the data file:
+url &lt;- &quot;http://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip&quot;
+download.file(url, &quot;repdata-data-activity.zip&quot;, mode=&quot;wb&quot;)
+unzip(&quot;repdata-data-activity.zip&quot;,overwrite = TRUE, exdir = &quot;.&quot;)</code></pre>
 <pre class="r"><code>filename &lt;- paste(c(&quot;./&quot;,subDir,&quot;/&quot;,&quot;activity.csv&quot;), collapse=&quot;&quot;)
 data &lt;- read.csv(filename)</code></pre>
 <ol start="2" style="list-style-type: decimal">
